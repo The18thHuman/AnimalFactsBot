@@ -1,0 +1,16 @@
+version: '3'
+services:
+  animalfactsbot:
+    image: python-animalfactsbot
+# env_file должен содержать ваш токен в формате
+# token = "ваш токен"
+    env_file:
+      - credentials.env
+#    environment:
+#      - token=YOUR_TOKEN # Или можете указать его напрямую здесь, заменив YOUR_TOKEN
+    networks:
+      - animalbot_network
+
+networks:
+  animalbot_network:
+    external: false
